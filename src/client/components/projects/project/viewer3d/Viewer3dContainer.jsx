@@ -61,21 +61,22 @@ export const Viewer3dContainer = observer(React.forwardRef(({ store }, viewerEle
   }, [viewerScriptsLoaded, viewer.current, viewerElementRef.current]);
 
   // Load geometry
-  useEffect(() => {
-    if (viewer.current && viewer3dTokenUrl) {
-      setLoading(true);
-      viewer.current.loadUrl(viewer3dTokenUrl, () => {
-        setLoading(false);
-      });
-    }
-  }, [viewer3dTokenUrl, viewer.current]);
+  
+  // useEffect(() => {
+  //   if (viewer.current && viewer3dTokenUrl) {
+  //     setLoading(true);
+  //     viewer.current.loadUrl(viewer3dTokenUrl, () => {
+  //       setLoading(false);
+  //     });
+  //   }
+  // }, [viewer3dTokenUrl, viewer.current]);
 
   const showLoader = !viewerScriptsLoaded || loading;
   return (
     <div id="viewer-3d-container" className={styles.viewer3DContainer} tabIndex="-1">
       {showLoader && <Loader /> }
       <div ref={viewerElementRef} id="viewer-3d" className={styles.viewer3D}></div>
-      <Toolbar store={store} className={styles.viewer3DToolbar} />
+      {/* <Toolbar store={store} className={styles.viewer3DToolbar} /> */}
     </div>
   );
 }));
