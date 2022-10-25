@@ -70,7 +70,7 @@ console.log(details)
           </div>
           <div className={styles.row}>
             <div><b>GrossArea</b></div>
-            <div>{(details?.quantitySets?.BaseQuantities?.quantities?.GrossFloorArea?.value?.value).toFixed(2) + " " + details?.propertySets?.Bemaßungen?.properties?.Fläche?.nominalValue?.unit }</div>
+            <div>{(details?.quantitySets?.BaseQuantities?.quantities?.GrossFloorArea?.value?.value).toFixed(2) + " " + details?.quantitySets?.BaseQuantities?.quantities?.GrossFloorArea?.value?.unit }</div>
           </div>
           <DetailsViewer store={store} projectId={projectId} className={styles.viewer3D} selectedObjectId={selectedObjectId} />
         </div>
