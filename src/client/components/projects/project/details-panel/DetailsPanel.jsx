@@ -62,15 +62,15 @@ console.log(details)
           </h3>
           <div className={styles.row}>
             <div><b>Name</b></div>
+            <div>{details.attributes?.LongName?.value}</div>
+          </div>
+          <div className={styles.row}>
+            <div><b>Nummber</b></div>
             <div>{details.attributes?.Name?.value}</div>
           </div>
           <div className={styles.row}>
-            <div><b>GlobalId</b></div>
-            <div>{details.attributes?.GlobalId?.value}</div>
-          </div>
-          <div className={styles.row}>
-            <div><b>Fläche</b></div>
-            <div>{(details?.propertySets?.Bemaßungen?.properties?.Fläche?.nominalValue?.value).toFixed(2) + " " + details?.propertySets?.Bemaßungen?.properties?.Fläche?.nominalValue?.unit }</div>
+            <div><b>GrossArea</b></div>
+            <div>{(details?.quantitySets?.BaseQuantities?.quantities?.GrossFloorArea?.value?.value).toFixed(2) + " " + details?.propertySets?.Bemaßungen?.properties?.Fläche?.nominalValue?.unit }</div>
           </div>
           <DetailsViewer store={store} projectId={projectId} className={styles.viewer3D} selectedObjectId={selectedObjectId} />
         </div>
