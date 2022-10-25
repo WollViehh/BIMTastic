@@ -13,7 +13,7 @@ import styles from './GitHubLink.module.scss';
 
 export const GitHubLink = ({ className }) => (
   <a
-    href="https://github.com/catenda/bimsync-api-demo"
+    href="https://github.com/WollViehh/BIMTastic"
     target="_blank"
     rel="noopener noreferrer"
     className={classNames(styles.githubLink, className)}
