@@ -36,6 +36,8 @@ export const DetailsPanel = observer(({ store, className }) => {
     }
   }, [selectedObjectId, detailsPanelOpen]);
 
+console.log(details)
+
   return (
     <Drawer
       className={styles.detailsPanel}
@@ -65,6 +67,10 @@ export const DetailsPanel = observer(({ store, className }) => {
           <div className={styles.row}>
             <div><b>GlobalId</b></div>
             <div>{details.attributes?.GlobalId?.value}</div>
+          </div>
+          <div className={styles.row}>
+            <div><b>Fläche</b></div>
+            <div>{(details?.propertySets?.Bemaßungen?.properties?.Fläche?.nominalValue?.value).toFixed(2) + " " + details?.propertySets?.Bemaßungen?.properties?.Fläche?.nominalValue?.unit }</div>
           </div>
           <DetailsViewer store={store} projectId={projectId} className={styles.viewer3D} selectedObjectId={selectedObjectId} />
         </div>
